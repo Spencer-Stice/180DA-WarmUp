@@ -19,7 +19,7 @@ def on_disconnect(client, userdata, rc):
 # The default message callback.
 # (you can create separate callbacks per subscribed topic)
 def on_message(client, userdata, message):
-    print('Received message: "' + str(message.payload) + '" on topic "' +
+    print('Received message: "' + message.payload.decode('utf-8') + '" on topic "' +
         message.topic + '" with QoS ' + str(message.qos))
         
 # 1. create a client instance.
